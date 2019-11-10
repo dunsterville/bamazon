@@ -55,7 +55,7 @@ const startApp = () => {
               buyProduct()
             } else {
               stock = stock - quantity
-              let cost = quantity * price
+              let cost = (quantity * price).toFixed(2)
               db.query(`UPDATE products SET stock = ${stock} WHERE id = ${id}`, err => {
                 if (err) {
                   console.log(err)
